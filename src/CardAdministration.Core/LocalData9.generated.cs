@@ -1,6 +1,5 @@
-namespace CardAdministration.Core;
-
-partial class LocalData9 {
-
-
+partial record struct LocalData9
+{
+    public string Lang { get; set; }
+    public string TxtMsg { get; set; }
 }

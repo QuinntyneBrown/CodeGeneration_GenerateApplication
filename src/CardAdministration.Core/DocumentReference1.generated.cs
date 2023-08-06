@@ -1,6 +1,5 @@
-namespace CardAdministration.Core;
-
-partial class DocumentReference1 {
-
-
+partial record struct DocumentReference1
+{
+    public string Tp { get; set; }
+    public string Ref { get; set; }
 }

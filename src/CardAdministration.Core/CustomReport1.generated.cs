@@ -1,6 +1,7 @@
-namespace CardAdministration.Core;
-
-partial class CustomReport1 {
-
-
+partial record struct CustomReport1
+{
+    public string Envt { get; set; }
+    public string Cntxt { get; set; }
+    public string Rpt { get; set; }
+    public string SplmtryData { get; set; }
 }

@@ -1,6 +1,6 @@
-namespace CardAdministration.Core;
-
-partial class ReconciliationInitiationV03 {
-
-
+partial record struct ReconciliationInitiationV03
+{
+    public string Hdr { get; set; }
+    public string Body { get; set; }
+    public string SctyTrlr { get; set; }
 }

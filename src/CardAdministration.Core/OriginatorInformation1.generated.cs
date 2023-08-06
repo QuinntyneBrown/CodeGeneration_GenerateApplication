@@ -1,6 +1,4 @@
-namespace CardAdministration.Core;
-
-partial class OriginatorInformation1 {
-
-
+partial record struct OriginatorInformation1
+{
+    public string Cert { get; set; }
 }

@@ -1,6 +1,5 @@
-namespace CardAdministration.Core;
-
-partial class CardReadingCapabilities1 {
-
-
+partial record struct CardReadingCapabilities1
+{
+    public string Cpblty { get; set; }
+    public string OthrCpblty { get; set; }
 }

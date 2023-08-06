@@ -1,6 +1,5 @@
-namespace CardAdministration.Core;
-
-partial class Jurisdiction2 {
-
-
+partial record struct Jurisdiction2
+{
+    public string DmstInd { get; set; }
+    public string DmstQlfctn { get; set; }
 }

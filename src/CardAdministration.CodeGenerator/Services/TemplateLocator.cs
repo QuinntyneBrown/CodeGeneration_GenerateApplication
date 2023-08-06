@@ -1,3 +1,6 @@
+// Copyright (c) Quinntyne Brown. All Rights Reserved.
+// Licensed under the MIT License. See License.txt in the project root for license information.
+
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System.Collections.Concurrent;
@@ -20,9 +23,9 @@ public class TemplateLocator: ITemplateLocator
 
     public async Task<string> Get(string name)
     {
-        _logger.LogInformation("Get template");
+        _logger.LogInformation("Get template. {name}", name);
 
-        var result = _cache.TryGetValue(name, out string _cachedTemplate);
+        var result = _cache.TryGetValue(name, out string? _cachedTemplate);
 
         if (!result)
         {
@@ -35,3 +38,4 @@ public class TemplateLocator: ITemplateLocator
     }
 
 }
+

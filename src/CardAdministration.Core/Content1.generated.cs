@@ -1,6 +1,6 @@
-namespace CardAdministration.Core;
-
-partial class Content1 {
-
-
+partial record struct Content1
+{
+    public string Val { get; set; }
+    public string Sgntr { get; set; }
+    public string CertId { get; set; }
 }

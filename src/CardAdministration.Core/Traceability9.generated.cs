@@ -1,6 +1,6 @@
-namespace CardAdministration.Core;
-
-partial class Traceability9 {
-
-
+partial record struct Traceability9
+{
+    public string RlayId { get; set; }
+    public string TracDtTmIn { get; set; }
+    public string TracDtTmOut { get; set; }
 }

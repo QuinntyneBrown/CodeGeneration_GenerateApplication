@@ -1,6 +1,3 @@
-namespace CardAdministration.Core;
-
-partial class RecordMessage1Choice {
-
-
+partial record struct RecordMessage1Choice
+{
 }

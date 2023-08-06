@@ -1,6 +1,5 @@
-namespace CardAdministration.Core;
-
-partial class CardWritingCapabilities1 {
-
-
+partial record struct CardWritingCapabilities1
+{
+    public string Cpblty { get; set; }
+    public string OthrCpblty { get; set; }
 }

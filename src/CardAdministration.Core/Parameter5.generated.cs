@@ -1,6 +1,4 @@
-namespace CardAdministration.Core;
-
-partial class Parameter5 {
-
-
+partial record struct Parameter5
+{
+    public string DgstAlgo { get; set; }
 }

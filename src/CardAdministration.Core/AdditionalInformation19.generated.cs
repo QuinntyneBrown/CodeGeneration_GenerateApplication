@@ -1,6 +1,6 @@
-namespace CardAdministration.Core;
-
-partial class AdditionalInformation19 {
-
-
+partial record struct AdditionalInformation19
+{
+    public string NtrdDataNmrc { get; set; }
+    public string NtrdDataAlphaNmrc { get; set; }
+    public string AddtlData { get; set; }
 }

@@ -1,6 +1,5 @@
-namespace CardAdministration.Core;
-
-partial class FleetData4 {
-
-
+partial record struct FleetData4
+{
+    public string Summry { get; set; }
+    public string LineItm { get; set; }
 }

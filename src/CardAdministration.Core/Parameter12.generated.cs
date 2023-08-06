@@ -1,6 +1,6 @@
-namespace CardAdministration.Core;
-
-partial class Parameter12 {
-
-
+partial record struct Parameter12
+{
+    public string NcrptnFrmt { get; set; }
+    public string InitlstnVctr { get; set; }
+    public string BPddg { get; set; }
 }

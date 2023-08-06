@@ -1,6 +1,4 @@
-namespace CardAdministration.Core;
-
-partial class Document {
-
-
+partial record struct Document
+{
+    public string CstmRpt { get; set; }
 }

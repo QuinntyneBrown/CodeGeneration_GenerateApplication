@@ -1,6 +1,8 @@
-namespace CardAdministration.Core;
-
-partial class AdditionalFeeReconciliation2 {
-
-
+partial record struct AdditionalFeeReconciliation2
+{
+    public string RcncltnImpct { get; set; }
+    public string Tp { get; set; }
+    public string OthrTp { get; set; }
+    public string Amt { get; set; }
+    public string Cnt { get; set; }
 }

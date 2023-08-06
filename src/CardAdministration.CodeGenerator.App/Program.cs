@@ -1,7 +1,10 @@
-﻿using CardAdministration.CodeGenerator.App;
+// Copyright (c) Quinntyne Brown. All Rights Reserved.
+// Licensed under the MIT License. See License.txt in the project root for license information.
+
+using CardAdministration.CodeGenerator.App;
 using CardAdministration.CodeGenerator.Artifacts;
 using CardAdministration.CodeGenerator.Artifacts.Files;
-using CardAdministration.CodeGenerator.Models;
+using CardAdministration.CodeGenerator.Domain;
 using CommandLine;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -12,7 +15,6 @@ async Task RunAsync()
 {
     var parsedResult = _createParser().ParseArguments<Options>(args);
 
-
     var host = Host.CreateDefaultBuilder().ConfigureServices(services =>
     {
         services.AddLogging();
@@ -20,22 +22,21 @@ async Task RunAsync()
             x.TemplatesDirectory = parsedResult.Value.TemplateDirectory;
             x.OutputDirectory = parsedResult.Value.OutputDirectory;
         });
+
+        services.AddSingleton(services =>
+        {
+            var parser = services.GetRequiredService<IConceptualModelParser>();
+
+            return parser.ParseAsync(parsedResult.Value.Path).ConfigureAwait(false).GetAwaiter().GetResult();
+        });
+
     }).Build();
 
-    var parser = host.Services.GetRequiredService<IConceptualModelParser>();
+    var model = host.Services.GetRequiredService<ConceptualModel>();
 
     var generator = host.Services.GetRequiredService<IArtifactGenerator>();
 
     var fileFactory = host.Services.GetRequiredService<IFileFactory>();
-
-    var model = await parser.ParseAsync(parsedResult.Value.Path);
-
-    foreach (var type in model.SimpleTypes)
-    {
-        var fileModel = await fileFactory.CreateSimpleType(type, parsedResult.Value.OutputDirectory);
-
-        await generator.GenerateAsync(fileModel);
-    }
 
     foreach (var type in model.ComplexTypes)
     {

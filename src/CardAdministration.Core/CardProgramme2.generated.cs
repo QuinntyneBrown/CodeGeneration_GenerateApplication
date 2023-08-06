@@ -1,6 +1,5 @@
-namespace CardAdministration.Core;
-
-partial class CardProgramme2 {
-
-
+partial record struct CardProgramme2
+{
+    public string CardPrgrmmPropsd { get; set; }
+    public string CardPrgrmmApld { get; set; }
 }

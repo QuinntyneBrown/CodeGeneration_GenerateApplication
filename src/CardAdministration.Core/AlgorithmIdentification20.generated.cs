@@ -1,6 +1,5 @@
-namespace CardAdministration.Core;
-
-partial class AlgorithmIdentification20 {
-
-
+partial record struct AlgorithmIdentification20
+{
+    public string Algo { get; set; }
+    public string Param { get; set; }
 }

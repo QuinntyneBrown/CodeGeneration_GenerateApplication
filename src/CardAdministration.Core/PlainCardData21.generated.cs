@@ -1,6 +1,5 @@
-namespace CardAdministration.Core;
-
-partial class PlainCardData21 {
-
-
+partial record struct PlainCardData21
+{
+    public string DrvrOrVhclId { get; set; }
+    public string AddtlCardData { get; set; }
 }

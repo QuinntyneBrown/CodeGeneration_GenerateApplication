@@ -1,6 +1,3 @@
-namespace CardAdministration.Core;
-
-partial class SupplementaryDataEnvelope1 {
-
-
+partial record struct SupplementaryDataEnvelope1
+{
 }

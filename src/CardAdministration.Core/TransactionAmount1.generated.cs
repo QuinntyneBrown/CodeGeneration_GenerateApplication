@@ -1,6 +1,5 @@
-namespace CardAdministration.Core;
-
-partial class TransactionAmount1 {
-
-
+partial record struct TransactionAmount1
+{
+    public string Amt { get; set; }
+    public string Ccy { get; set; }
 }

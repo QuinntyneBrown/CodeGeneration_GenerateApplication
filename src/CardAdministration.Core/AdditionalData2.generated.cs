@@ -1,6 +1,5 @@
-namespace CardAdministration.Core;
-
-partial class AdditionalData2 {
-
-
+partial record struct AdditionalData2
+{
+    public string Tp { get; set; }
+    public string Dtls { get; set; }
 }

@@ -1,6 +1,5 @@
-namespace CardAdministration.Core;
-
-partial class Instalment4 {
-
-
+partial record struct Instalment4
+{
+    public string PmtSeqNb { get; set; }
+    public string Plan { get; set; }
 }

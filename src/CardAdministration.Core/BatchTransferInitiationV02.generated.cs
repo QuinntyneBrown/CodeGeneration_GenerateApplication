@@ -1,6 +1,6 @@
-namespace CardAdministration.Core;
-
-partial class BatchTransferInitiationV02 {
-
-
+partial record struct BatchTransferInitiationV02
+{
+    public string Hdr { get; set; }
+    public string Body { get; set; }
+    public string SctyTrlr { get; set; }
 }

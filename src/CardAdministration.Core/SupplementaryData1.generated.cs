@@ -1,6 +1,5 @@
-namespace CardAdministration.Core;
-
-partial class SupplementaryData1 {
-
-
+partial record struct SupplementaryData1
+{
+    public string PlcAndNm { get; set; }
+    public string Envlp { get; set; }
 }

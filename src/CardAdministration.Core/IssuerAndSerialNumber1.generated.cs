@@ -1,6 +1,5 @@
-namespace CardAdministration.Core;
-
-partial class IssuerAndSerialNumber1 {
-
-
+partial record struct IssuerAndSerialNumber1
+{
+    public string Issr { get; set; }
+    public string SrlNb { get; set; }
 }

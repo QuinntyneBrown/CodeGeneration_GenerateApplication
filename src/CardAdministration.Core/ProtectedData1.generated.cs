@@ -1,6 +1,6 @@
-namespace CardAdministration.Core;
-
-partial class ProtectedData1 {
-
-
+partial record struct ProtectedData1
+{
+    public string CnttTp { get; set; }
+    public string EnvlpdData { get; set; }
+    public string NcrptdData { get; set; }
 }

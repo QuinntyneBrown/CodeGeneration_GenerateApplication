@@ -1,6 +1,5 @@
-namespace CardAdministration.Core;
-
-partial class GenericInformation1 {
-
-
+partial record struct GenericInformation1
+{
+    public string Nm { get; set; }
+    public string Val { get; set; }
 }

@@ -1,6 +1,3 @@
-namespace CardAdministration.Core;
-
-partial class Recipient7Choice {
-
-
+partial record struct Recipient7Choice
+{
 }

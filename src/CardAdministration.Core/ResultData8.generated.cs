@@ -1,6 +1,8 @@
-namespace CardAdministration.Core;
-
-partial class ResultData8 {
-
-
+partial record struct ResultData8
+{
+    public string Rslt { get; set; }
+    public string OthrRslt { get; set; }
+    public string RsltDtls { get; set; }
+    public string OthrRsltDtls { get; set; }
+    public string AddtlRsltInf { get; set; }
 }

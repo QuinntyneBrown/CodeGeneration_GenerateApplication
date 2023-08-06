@@ -1,6 +1,4 @@
-namespace CardAdministration.Core;
-
-partial class Context17 {
-
-
+partial record struct Context17
+{
+    public string TxCntxt { get; set; }
 }

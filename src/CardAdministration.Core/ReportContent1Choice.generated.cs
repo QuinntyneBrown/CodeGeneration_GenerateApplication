@@ -1,6 +1,3 @@
-namespace CardAdministration.Core;
-
-partial class ReportContent1Choice {
-
-
+partial record struct ReportContent1Choice
+{
 }

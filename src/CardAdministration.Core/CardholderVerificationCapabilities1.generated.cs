@@ -1,6 +1,5 @@
-namespace CardAdministration.Core;
-
-partial class CardholderVerificationCapabilities1 {
-
-
+partial record struct CardholderVerificationCapabilities1
+{
+    public string Cpblty { get; set; }
+    public string OthrCpblty { get; set; }
 }

@@ -1,6 +1,5 @@
-namespace CardAdministration.Core;
-
-partial class Lodging3 {
-
-
+partial record struct Lodging3
+{
+    public string Summry { get; set; }
+    public string LineItm { get; set; }
 }

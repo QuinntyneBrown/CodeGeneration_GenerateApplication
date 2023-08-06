@@ -1,6 +1,5 @@
-namespace CardAdministration.Core;
-
-partial class SpecialConditions1 {
-
-
+partial record struct SpecialConditions1
+{
+    public string Id { get; set; }
+    public string Val { get; set; }
 }

@@ -1,6 +1,3 @@
-namespace CardAdministration.Core;
-
-partial class VerificationValue1Choice {
-
-
+partial record struct VerificationValue1Choice
+{
 }

@@ -1,6 +1,5 @@
-namespace CardAdministration.Core;
-
-partial class ClearingTotals2 {
-
-
+partial record struct ClearingTotals2
+{
+    public string Cnt { get; set; }
+    public string AcmltdAmt { get; set; }
 }

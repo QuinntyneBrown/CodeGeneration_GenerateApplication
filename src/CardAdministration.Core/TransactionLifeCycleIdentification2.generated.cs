@@ -1,6 +1,4 @@
-namespace CardAdministration.Core;
-
-partial class TransactionLifeCycleIdentification2 {
-
-
+partial record struct TransactionLifeCycleIdentification2
+{
+    public string Id { get; set; }
 }

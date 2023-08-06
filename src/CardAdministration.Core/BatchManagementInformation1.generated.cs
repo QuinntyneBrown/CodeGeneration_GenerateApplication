@@ -1,6 +1,7 @@
-namespace CardAdministration.Core;
-
-partial class BatchManagementInformation1 {
-
-
+partial record struct BatchManagementInformation1
+{
+    public string ColltnId { get; set; }
+    public string BtchId { get; set; }
+    public string MsgSeqNb { get; set; }
+    public string MsgChcksmInptVal { get; set; }
 }
