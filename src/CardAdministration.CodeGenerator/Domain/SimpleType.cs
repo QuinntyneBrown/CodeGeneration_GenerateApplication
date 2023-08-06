@@ -3,11 +3,15 @@
 
 namespace CardAdministration.CodeGenerator.Domain;
 
-public class SimpleType {
+public class SimpleType
+{
     public SimpleType(string name)
     {
-        Name = name;    
+        Name = name;
     }
     public string Name { get; set; }
+
+    //string, date, datetime
+    public Restriction Restriction { get; set; }
 }
 

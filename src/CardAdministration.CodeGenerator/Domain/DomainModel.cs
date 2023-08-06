@@ -3,12 +3,13 @@
 
 namespace CardAdministration.CodeGenerator.Domain;
 
-public class ConceptualModel {
+public class DomainModel
+{
 
-    public ConceptualModel()
+    public DomainModel()
     {
         ComplexTypes = new();
-        SimpleTypes = new();    
+        SimpleTypes = new();
     }
     public List<ComplexType> ComplexTypes { get; set; }
     public List<SimpleType> SimpleTypes { get; set; }

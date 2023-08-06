@@ -7,23 +7,24 @@ using System.Xml.Linq;
 
 namespace CardAdministration.CodeGenerator.Domain;
 
-public class ConceptualModelParser: IConceptualModelParser
+public class ConceptualModelParser : IConceptualModelParser
 {
     private readonly ILogger<ConceptualModelParser> _logger;
     private readonly IFileSystem _fileSystem;
-    private ConceptualModel _conceptualModel;
-    public ConceptualModelParser(ILogger<ConceptualModelParser> logger, IFileSystem fileSystem){
+    private DomainModel _conceptualModel;
+    public ConceptualModelParser(ILogger<ConceptualModelParser> logger, IFileSystem fileSystem)
+    {
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         _fileSystem = fileSystem ?? throw new ArgumentNullException(nameof(fileSystem));
     }
 
-    public async Task<ConceptualModel> ParseAsync(string path)
+    public async Task<DomainModel> ParseAsync(string path)
     {
         _logger.LogInformation("Parse message definitions");
 
-        if(_conceptualModel == null)
+        if (_conceptualModel == null)
         {
-            var model = new ConceptualModel();
+            var model = new DomainModel();
 
             foreach (var file in _fileSystem.Directory.GetFiles(path, "*.xsd", SearchOption.AllDirectories))
             {
@@ -45,14 +46,14 @@ public class ConceptualModelParser: IConceptualModelParser
 
                             case "complexType":
                                 var complexType = new ComplexType(type.Attribute("name")!.Value);
-                                
+
                                 foreach (var sequence in from seq in type.Descendants()
                                                          where seq.Name == ns + "sequence"
                                                          select seq)
                                 {
                                     foreach (var sequenceElement in from el in sequence.Descendants()
-                                                             where el.Name == ns + "element"
-                                                             select el)
+                                                                    where el.Name == ns + "element"
+                                                                    select el)
                                     {
                                         complexType.Sequence.Add(new Sequence()
                                         {

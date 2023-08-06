@@ -9,7 +9,7 @@ namespace CardAdministration.CodeGenerator.Syntax;
 
 public class SyntaxGenerator : ISyntaxGenerator
 {
-    private readonly ConcurrentDictionary<Type,Func<dynamic, Task<string>>> _strategies = new ConcurrentDictionary<Type, Func<dynamic, Task<string>>>();
+    private readonly ConcurrentDictionary<Type, Func<dynamic, Task<string>>> _strategies = new ConcurrentDictionary<Type, Func<dynamic, Task<string>>>();
     private readonly ILogger<SyntaxGenerator> _logger;
     private readonly IServiceProvider _serviceProvider;
 
@@ -23,7 +23,7 @@ public class SyntaxGenerator : ISyntaxGenerator
     {
         _strategies.TryGetValue(typeof(T), out Func<dynamic, Task<string>>? generateAsync);
 
-        if(generateAsync == null)
+        if (generateAsync == null)
         {
             var strategy = _serviceProvider.GetRequiredService<ISyntaxGenerationStrategy<T>>();
 

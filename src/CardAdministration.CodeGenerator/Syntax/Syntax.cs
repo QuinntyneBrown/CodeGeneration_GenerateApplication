@@ -3,7 +3,8 @@
 
 namespace CardAdministration.CodeGenerator.Syntax;
 
-public class SyntaxModel { 
+public class SyntaxModel
+{
 
 }
 

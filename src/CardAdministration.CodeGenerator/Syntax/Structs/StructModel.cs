@@ -5,7 +5,7 @@ using CardAdministration.CodeGenerator.Syntax.Properties;
 
 namespace CardAdministration.CodeGenerator.Syntax.Structs;
 
-public class StructModel: SyntaxModel
+public class StructModel : SyntaxModel
 {
     public StructModel(string name)
     {

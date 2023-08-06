@@ -8,7 +8,7 @@ using System.IO.Abstractions;
 
 namespace CardAdministration.CodeGenerator.Services;
 
-public class TemplateLocator: ITemplateLocator
+public class TemplateLocator : ITemplateLocator
 {
     private readonly ILogger<TemplateLocator> _logger;
     private readonly IFileSystem _fileSystem;

@@ -6,11 +6,12 @@ using RazorEngineCore;
 
 namespace CardAdministration.CodeGenerator.Services;
 
-public class RazorTemplateProcessor: RazorEngine, ITemplateProcessor
+public class RazorTemplateProcessor : RazorEngine, ITemplateProcessor
 {
     private readonly ILogger<RazorTemplateProcessor> _logger;
 
-    public RazorTemplateProcessor(ILogger<RazorTemplateProcessor> logger){
+    public RazorTemplateProcessor(ILogger<RazorTemplateProcessor> logger)
+    {
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 

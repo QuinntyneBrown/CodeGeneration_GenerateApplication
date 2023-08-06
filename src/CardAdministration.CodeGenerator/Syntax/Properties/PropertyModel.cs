@@ -3,7 +3,7 @@
 
 namespace CardAdministration.CodeGenerator.Syntax.Properties;
 
-public class PropertyModel: SyntaxModel
+public class PropertyModel : SyntaxModel
 {
     public PropertyModel(string name)
     {

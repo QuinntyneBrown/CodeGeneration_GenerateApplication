@@ -3,13 +3,15 @@
 
 namespace CardAdministration.CodeGenerator.Domain;
 
-public class ComplexType {
+public class ComplexType
+{
 
-	public ComplexType(string name)
-	{
-		Name = name;
+    public ComplexType(string name)
+    {
+        Name = name;
         Sequence = new List<Sequence>();
-	}
+    }
+
     public string Name { get; set; }
     public List<Sequence> Sequence { get; set; }
 }

@@ -5,7 +5,8 @@ using static System.Linq.Enumerable;
 
 namespace CardAdministration.CodeGenerator;
 
-public static class StringExtensions { 
+public static class StringExtensions
+{
 
     public static string Indent(this string value, int indent, int spaces = 4)
     {

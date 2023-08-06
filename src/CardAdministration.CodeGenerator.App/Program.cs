@@ -18,7 +18,8 @@ async Task RunAsync()
     var host = Host.CreateDefaultBuilder().ConfigureServices(services =>
     {
         services.AddLogging();
-        services.AddCodeGeneratorServices(x => {
+        services.AddCodeGeneratorServices(x =>
+        {
             x.TemplatesDirectory = parsedResult.Value.TemplateDirectory;
             x.OutputDirectory = parsedResult.Value.OutputDirectory;
         });
@@ -32,7 +33,7 @@ async Task RunAsync()
 
     }).Build();
 
-    var model = host.Services.GetRequiredService<ConceptualModel>();
+    var model = host.Services.GetRequiredService<DomainModel>();
 
     var generator = host.Services.GetRequiredService<IArtifactGenerator>();
 

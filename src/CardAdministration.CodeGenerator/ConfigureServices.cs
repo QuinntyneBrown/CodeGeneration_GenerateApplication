@@ -13,14 +13,16 @@ namespace Microsoft.Extensions.DependencyInjection;
 
 public static class ConfigureServices
 {
-    public static void AddCodeGeneratorServices(this IServiceCollection services, Action<CodeGeneratorOptions> configure){
+    public static void AddCodeGeneratorServices(this IServiceCollection services, Action<CodeGeneratorOptions> configure)
+    {
         services.Configure(configure);
-        services.AddSingleton<IConceptualModelParser, ConceptualModelParser>();
-        services.AddSingleton<IArtifactGenerator , ArtifactGenerator>();
+        services.AddSingleton<IConceptualModelParser, DomainModelParser>();
+        services.AddSingleton<IArtifactGenerator, ArtifactGenerator>();
         services.AddSingleton<IFileSystem, FileSystem>();
         services.AddSingleton<IFileFactory, FileFactory>();
         services.AddSingleton<ITemplateProcessor, RazorTemplateProcessor>();
         services.AddSingleton<ITemplateLocator, TemplateLocator>();
+        services.AddSingleton<ICommandService, CommandService>();
 
         services.AddSingleton<ISyntaxGenerator, SyntaxGenerator>();
 
