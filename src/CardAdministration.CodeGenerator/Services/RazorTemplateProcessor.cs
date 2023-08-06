@@ -23,7 +23,4 @@ public class RazorTemplateProcessor : RazorEngine, ITemplateProcessor
 
         return await compiledTemplate.RunAsync(model);
     }
-
 }
-
-

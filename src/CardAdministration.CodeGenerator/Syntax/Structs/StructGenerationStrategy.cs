@@ -28,7 +28,7 @@ public class StructGenerationStrategy : ISyntaxGenerationStrategy<StructModel>
 
         foreach (var property in model.Properties)
         {
-            sb.AppendLine(($"public string {property.Name}" + " { get; set; }").Indent(1));
+            sb.AppendLine((await generator.GenerateAsync(property)).Indent(1));
         }
 
         sb.AppendLine("}");
