@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "CardAdministration.CodeGenerator.App": {
-      "commandName": "Project",
-      "commandLineArgs": "-p C:\\projects\\CodeGeneration_GenerateEntities\\data"
-    }
-  }
-}

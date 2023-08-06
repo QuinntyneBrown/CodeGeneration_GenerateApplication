@@ -8,7 +8,7 @@ namespace CardAdministration.CodeGenerator.App;
 public class Options
 {
     [Option('p')]
-    public required string Path { get; set; }
+    public required string Path { get; set; } = "..\\..\\..\\..\\..\\data";
 
     [Option('o')]
     public required string OutputDirectory { get; set; } = "..\\..\\..\\..\\CardAdministration.Core\\";
