@@ -9,9 +9,9 @@ namespace CardAdministration.CodeGenerator.Syntax;
 
 public class SyntaxGenerator : ISyntaxGenerator
 {
-    private readonly ConcurrentDictionary<Type, Func<dynamic, Task<string>>> _strategies = new ConcurrentDictionary<Type, Func<dynamic, Task<string>>>();
     private readonly ILogger<SyntaxGenerator> _logger;
     private readonly IServiceProvider _serviceProvider;
+    private readonly ConcurrentStack<KeyValuePair<Type, Func<dynamic, Task<string>>>> _strategies = new ConcurrentStack<KeyValuePair<Type, Func<dynamic, Task<string>>>>();
 
     public SyntaxGenerator(ILogger<SyntaxGenerator> logger, IServiceProvider serviceProvider)
     {
@@ -21,17 +21,21 @@ public class SyntaxGenerator : ISyntaxGenerator
 
     public async Task<string> GenerateAsync<T>(T model)
     {
-        _strategies.TryGetValue(typeof(T), out Func<dynamic, Task<string>>? generateAsync);
+        var generateAsync = _strategies
+            .Where(x => x.Key == typeof(T))
+            .Select(x => x.Value)
+            .FirstOrDefault();
 
         if (generateAsync == null)
         {
             var strategy = _serviceProvider.GetRequiredService<ISyntaxGenerationStrategy<T>>();
 
-            generateAsync = (dynamic model) => strategy.GenerateAsync(model);
+            generateAsync = (dynamic model) => strategy.GenerateAsync(this, model);
 
-            _strategies.TryAdd(typeof(T), generateAsync);
+            _strategies.Push(new(typeof(T), generateAsync));
         }
 
         return await generateAsync(model);
+
     }
 }

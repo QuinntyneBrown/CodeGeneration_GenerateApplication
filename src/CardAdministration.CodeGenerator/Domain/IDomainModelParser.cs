@@ -3,7 +3,7 @@
 
 namespace CardAdministration.CodeGenerator.Domain;
 
-public interface IConceptualModelParser
+public interface IDomainModelParser
 {
     Task<DomainModel> ParseAsync(string path);
 }

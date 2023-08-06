@@ -26,7 +26,7 @@ async Task RunAsync()
 
         services.AddSingleton(services =>
         {
-            var parser = services.GetRequiredService<IConceptualModelParser>();
+            var parser = services.GetRequiredService<IDomainModelParser>();
 
             return parser.ParseAsync(parsedResult.Value.Path).ConfigureAwait(false).GetAwaiter().GetResult();
         });

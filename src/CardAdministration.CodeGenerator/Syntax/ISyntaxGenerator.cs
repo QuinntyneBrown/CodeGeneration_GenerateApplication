@@ -6,7 +6,4 @@ namespace CardAdministration.CodeGenerator.Syntax;
 public interface ISyntaxGenerator
 {
     Task<string> GenerateAsync<T>(T model);
-
 }
-
-

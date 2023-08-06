@@ -7,12 +7,12 @@ using System.Xml.Linq;
 
 namespace CardAdministration.CodeGenerator.Domain;
 
-public class ConceptualModelParser : IConceptualModelParser
+public class DomainModelParser : IDomainModelParser
 {
-    private readonly ILogger<ConceptualModelParser> _logger;
+    private readonly ILogger<DomainModelParser> _logger;
     private readonly IFileSystem _fileSystem;
-    private DomainModel _conceptualModel;
-    public ConceptualModelParser(ILogger<ConceptualModelParser> logger, IFileSystem fileSystem)
+    private DomainModel _domainModel;
+    public DomainModelParser(ILogger<DomainModelParser> logger, IFileSystem fileSystem)
     {
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         _fileSystem = fileSystem ?? throw new ArgumentNullException(nameof(fileSystem));
@@ -20,9 +20,9 @@ public class ConceptualModelParser : IConceptualModelParser
 
     public async Task<DomainModel> ParseAsync(string path)
     {
-        _logger.LogInformation("Parse message definitions");
+        _logger.LogInformation("Parsing definitions within xml documents.");
 
-        if (_conceptualModel == null)
+        if (_domainModel == null)
         {
             var model = new DomainModel();
 
@@ -71,12 +71,10 @@ public class ConceptualModelParser : IConceptualModelParser
                 }
             }
 
-            _conceptualModel = model;
+            _domainModel = model;
         }
 
-
-
-        return _conceptualModel;
+        return _domainModel;
     }
 
 }

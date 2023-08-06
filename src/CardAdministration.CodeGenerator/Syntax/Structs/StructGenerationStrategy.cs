@@ -15,8 +15,11 @@ public class StructGenerationStrategy : ISyntaxGenerationStrategy<StructModel>
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
-    public async Task<string> GenerateAsync(StructModel model)
+    public async Task<string> GenerateAsync(ISyntaxGenerator generator, StructModel model)
     {
+
+        _logger.LogInformation("Generating struct syntax. {name}", model.Name);
+
         StringBuilder sb = new StringBuilder();
 
         sb.AppendLine($"partial record struct {model.Name}");
@@ -33,5 +36,3 @@ public class StructGenerationStrategy : ISyntaxGenerationStrategy<StructModel>
         return sb.ToString();
     }
 }
-
-
